@@ -22,5 +22,23 @@
         {
             return Math.Pow(baseValue, powerBy);
         }
+
+        public int Min(int[] nums)
+        {
+            int min = nums[0];
+            for (int i = 1; i < nums.Length; i++)
+            {
+                if (nums[i] < min)
+                {
+                    min = nums[i];
+                }
+            }
+            return min;
+        }
+
+        public double Division(double a, double b)
+        {
+            return a / b;
+        }
     }
 }

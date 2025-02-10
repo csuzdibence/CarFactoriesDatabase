@@ -64,5 +64,35 @@ namespace TestProject1
             // Assert
             Assert.AreEqual(addResult, -10);
         }
+
+        [Test]
+        public void TestMinimumValueReturning()
+        {
+            // Arrange, Act, assert
+            int[] nums = { 5, 16, 20, -8, 65, 123, 57, 1100, -5 };
+            int min = calculator.Min(nums);
+            Assert.AreEqual(-8, min);
+        }
+
+        [Test]
+        public void TestMinimumValueReturning2()
+        {
+            // Arrange, Act, assert
+            int[] nums = { 102, 5600, 9900, 102000, 45, 89 };
+            int min = calculator.Min(nums);
+            Assert.AreEqual(45, min);
+        }
+
+        [TestCase(2.0, 1.0, 2.0)]
+        [TestCase(5.0, 2.0, 2.5)]
+        [TestCase(16.0, 4.0, 4.0)]
+        [TestCase(1024.0, 128.0, 8.0)]
+        [TestCase(1024.0, -128.0, -8.0)]
+        [TestCase(-1024.0, -128.0, 8.0)]
+        public void TestDivision(double a, double b, double result)
+        {
+            double realResult = calculator.Division(a, b);
+            Assert.AreEqual(result, realResult);
+        }
     }
 }
